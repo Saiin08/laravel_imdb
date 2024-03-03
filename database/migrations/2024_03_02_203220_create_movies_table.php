@@ -13,6 +13,20 @@ return new class extends Migration
     {
         Schema::create('movies', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('movie_type_id');
+            $table->foreignId('movie_status_id');
+            $table->string('name');
+            $table->integer('length');
+            $table->year('year');
+            $table->year('start_year');
+            $table->year('end_year');
+            $table->float('rating');
+            $table->integer('votes_nr');
+            $table->integer('metascore');
+            $table->foreignId('certification_id');
+            $table->foreignId('budget');
+            $table->string('budget_currency');
+            $table->string('color_code');
             $table->timestamps();
         });
     }
